@@ -27,12 +27,12 @@ Check out the full documentation at: http://twtxt.readthedocs.org/en/latest/
 Community
 ---------
 
-- twtxt IRC channel: **#twtxt** on `irc.freenode.net`_
+- twtxt IRC channel: **#twtxt** on `irc.libera.chat`_
 
 Contributions
 -------------
 
-- A curated list of active twtxt users by `mdom <https://github.com/mdom>`_: https://github.com/mdom/we-are-twtxt
+- A curated list of active twtxt users by `yarn.social <https://yarn.social/>`_: https://git.mills.io/yarnsocial/we-are-twtxt
 - A web-based directory of twtxt users by `reednj <https://twitter.com/reednj>`_: http://twtxt.reednj.com/
 - A web-based twtxt feed hoster for the masses by `plomlompom <http://www.plomlompom.de/>`_: https://github.com/plomlompom/htwtxt
 - A twtxt-to-atom converter in sh by `erlehmann <http://news.dieweltistgarnichtso.net/>`_: http://news.dieweltistgarnichtso.net/bin/twtxt2atom
@@ -45,11 +45,14 @@ Contributions
 - A twtxt client written in C by `dertuxmalwieder <https://github.com/dertuxmalwieder>`_: https://hub.darcs.net/dertuxmalwieder/twtxtc
 - A read-only timeline of the last 3000 tweets via gopher by `trqx <gopher://shroom.party>`_: gopher://shroom.party/1/twtxt
 - A bot for using twtxt over xmpp by `mdosch <https://blog.mdosch.de>`_: https://salsa.debian.org/mdosch-guest/goxtxt
-- twtxt registry server written in Go by `gbmor <https://github.com/gbmor>`_: https://github.com/getwtxt/getwtxt
+- twtxt registry server written in Go by `gbmor <https://github.com/gbmor>`_: https://github.com/gbmor/getwtxt-ng
 - A twtxt parsing library written in Rust by `gbmor <https://github.com/gbmor>`_: https://github.com/rustwtxt/rustwtxt
 - A twtxt WordPress plugin, that provides the blog-posts as twtxt file, written by `pfefferle <https://github.com/pfefferle>`_: https://github.com/pfefferle/wordpress-twtxt
-- A twtxt client for Emacs by `deadblackclover <https://github.com/deadblackclover>`_: https://github.com/deadblackclover/twtxt-el
+- A twtxt client for Emacs by `deadblackclover <https://codeberg.org/deadblackclover/twtxt-el>`_: https://codeberg.org/deadblackclover/twtxt-el
 - An php interface for publishing to your selfhosted twtxt.txt by `sorenpeter <https://github.com/sorenpeter>`_: https://github.com/sorenpeter/phpub2twtxt/
+- A graphical twtxt client written in Tcl/Tk, RSS-to-twtxt converter, and mentions extractor by `dbohdan <https://dbohdan.com>`_: https://gitlab.com/dbohdan/twtxt.tcl
+- twtwt: a really fast UNIX only twtxt client written in C by `win0err <https://github.com/win0err>`_: https://github.com/win0err/twtwt
+
 
 
 License
@@ -62,8 +65,8 @@ twtxt is released under the MIT License. See the bundled LICENSE file for detail
     :target: https://pypi.python.org/pypi/twtxt
     :alt: Latest version released on PyPi
 
-.. |build| image:: https://img.shields.io/travis/buckket/twtxt/master.svg?style=flat
-    :target: http://travis-ci.org/buckket/twtxt
+.. |build| image:: https://github.com/buckket/twtxt/actions/workflows/python.yml/badge.svg
+    :target: https://github.com/buckket/twtxt/actions/workflows/python.yml
     :alt: Build status of the master branch
 
 .. |coverage| image:: https://img.shields.io/coveralls/buckket/twtxt/master.svg?style=flat
@@ -82,4 +85,4 @@ twtxt is released under the MIT License. See the bundled LICENSE file for detail
     :target: http://twtxt.readthedocs.org/en/latest/?badge=latest
     :alt: Documentation Status
 
-.. _irc.freenode.net: https://freenode.net/
+.. _irc.libera.chat: https://libera.chat/

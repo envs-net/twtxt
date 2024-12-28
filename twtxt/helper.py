@@ -4,7 +4,7 @@
 
     This module implements various helper for use in twtxt.
 
-    :copyright: (c) 2016-2017 by buckket.
+    :copyright: (c) 2016-2022 by buckket.
     :license: MIT, see LICENSE for more details.
 """
 
@@ -14,7 +14,6 @@ import sys
 import textwrap
 
 import click
-import pkg_resources
 
 from twtxt.mentions import format_mentions
 from twtxt.parser import parse_iso8601
@@ -69,7 +68,7 @@ def style_source_with_status(source, status, porcelain=False):
             content_length=status.content_length,
             last_modified=status.last_modified)
     else:
-        if status.status_code == 200:
+        if hasattr(status, "status_code") and status.status_code == 200:
             scolor, smessage = "green", str(status.status_code)
         elif status:
             scolor, smessage = "red", str(status.status_code)
@@ -164,10 +163,7 @@ def sort_and_truncate_tweets(tweets, direction, limit):
 
 
 def generate_user_agent():
-    try:
-        version = pkg_resources.require("twtxt")[0].version
-    except pkg_resources.DistributionNotFound:
-        version = "unknown"
+    from twtxt import __version__ as version
 
     conf = click.get_current_context().obj["conf"]
     if conf.disclose_identity and conf.nick and conf.twturl:

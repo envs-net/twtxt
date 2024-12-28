@@ -4,12 +4,13 @@
 
     This module implements the command-line interface of twtxt.
 
-    :copyright: (c) 2016-2017 by buckket.
+    :copyright: (c) 2016-2022 by buckket.
     :license: MIT, see LICENSE for more details.
 """
 
 import logging
 import os
+import shutil
 import sys
 import textwrap
 from itertools import chain
@@ -239,7 +240,7 @@ def follow(ctx, nick, url, force):
             click.confirm("➤ You’re already following {0}. Overwrite?".format(
                 click.style(source.nick, bold=True)), default=False, abort=True)
 
-        _, status = get_remote_status([source])[0]
+        _, status = (get_remote_status([source]))[0]
         if not status or status.status_code != 200:
             click.confirm("➤ The feed of {0} at {1} is not available. Follow anyway?".format(
                 click.style(source.nick, bold=True),
@@ -258,7 +259,7 @@ def unfollow(ctx, nick):
     source = ctx.obj['conf'].get_source_by_nick(nick)
 
     try:
-        with Cache.discover() as cache:
+        with Cache.discover(update_interval=ctx.obj["conf"].timeline_update_interval) as cache:
             cache.remove_tweets(source.url)
     except OSError as e:
         logger.debug(e)
@@ -275,7 +276,7 @@ def unfollow(ctx, nick):
 @cli.command()
 def quickstart():
     """Quickstart wizard for setting up twtxt."""
-    width = click.get_terminal_size()[0]
+    width = shutil.get_terminal_size()[0]
     width = width if width <= 79 else 79
 
     click.secho("twtxt - quickstart", fg="cyan")
